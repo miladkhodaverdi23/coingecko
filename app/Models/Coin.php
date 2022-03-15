@@ -19,9 +19,18 @@ class Coin extends Model
         'image',
     ];
 
+    protected array $appends = [
+        'price'
+    ];
+
     public function prices():HasMany
     {
         return $this->hasMany(CoinPrice::class);
+    }
+
+    public function getPriceAttribute()
+    {
+        return $this->prices()->orderByDesc('created_at')->first();
     }
 
 }
