@@ -32,9 +32,9 @@ class CreateCoinPricesTable extends Migration
             $table->unsignedBigInteger('ath')->nullable();
             $table->unsignedFloat('ath_change_percentage',15,10)->nullable();
             $table->timestamp('ath_date')->nullable();
-            $table->unsignedBigInteger('ath1')->nullable();
-            $table->unsignedFloat('ath1_change_percentage',15,10)->nullable();
-            $table->timestamp('ath1_date')->nullable();
+            $table->unsignedBigInteger('at1')->nullable();
+            $table->unsignedFloat('at1_change_percentage',15,10)->nullable();
+            $table->timestamp('at1_date')->nullable();
             $table->timestamps();
         });
     }

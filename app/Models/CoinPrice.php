@@ -25,9 +25,9 @@ class CoinPrice extends Model
         'ath',
         'ath_change_percentage',
         'ath_date',
-        'ath1',
-        'ath1_change_percentage',
-        'ath1_date',
+        'at1',
+        'at1_change_percentage',
+        'at1_date',
     ];
 
 
