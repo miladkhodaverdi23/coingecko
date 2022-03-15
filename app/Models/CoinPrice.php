@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CoinPrice extends Model
 {
-    protected $fillable = [
+    protected array $fillable = [
         'market_cap',
         'market_cap_rank',
         'fully_diluted_valuation',
@@ -28,4 +29,10 @@ class CoinPrice extends Model
         'ath1_change_percentage',
         'ath1_date',
     ];
+
+
+    public function coin():BelongsTo
+    {
+        return $this->belongsTo(Coin::class);
+    }
 }

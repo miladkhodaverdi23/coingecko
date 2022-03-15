@@ -2,21 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Coin extends Model
 {
     use SoftDeletes;
 
-    protected $softDelete = true;
-    protected $fillable = [
+    protected bool $softDelete = true;
+    protected array $fillable = [
         'str_id',
         'symbol',
         'name',
         'name_fa',
         'image',
     ];
+
+    public function prices():HasMany
+    {
+        return $this->hasMany(CoinPrice::class);
+    }
 
 }
