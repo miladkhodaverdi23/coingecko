@@ -8,9 +8,15 @@ use Yajra\DataTables\Facades\DataTables;
 
 class CoinController extends Controller
 {
+    public function index()
+    {
+        return view('coins');
+    }
+
     public function ajax(): JsonResponse
     {
         $coin = Coin::query();
-        return DataTables::eloquent($coin)->toJson();
+        return DataTables::eloquent($coin)
+            ->toJson();
     }
 }
