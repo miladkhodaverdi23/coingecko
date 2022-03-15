@@ -16,6 +16,7 @@ class CreateCoinPricesTable extends Migration
         Schema::create('coin_prices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('coin_id')->constrained('coins');
+            $table->float('current_price',20,10)->nullable();
             $table->bigInteger('market_cap')->nullable();
             $table->bigInteger('market_cap_rank')->nullable();
             $table->bigInteger('fully_diluted_valuation')->nullable();

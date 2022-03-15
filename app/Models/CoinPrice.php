@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class CoinPrice extends Model
 {
     protected array $fillable = [
+        'current_price',
         'market_cap',
         'market_cap_rank',
         'fully_diluted_valuation',
