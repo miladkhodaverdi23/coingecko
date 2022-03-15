@@ -50,7 +50,7 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script>
-        $('#coins-table').DataTable({
+        let datatablecoin = $('#coins-table').DataTable({
             processing: true,
             serverSide: true,
             ajax: '{!! route('v1.get.coin') !!}',
@@ -63,6 +63,9 @@
                 { data: 'price.created_at', name: 'price.created_at' }
             ]
         });
+        setInterval(function () {
+            datatablecoin.ajax.reload();
+        },10000)
     </script>
     </body>
 
