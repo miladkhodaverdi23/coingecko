@@ -15,8 +15,15 @@ class CoinController extends Controller
 
     public function ajax(): JsonResponse
     {
-        $coin = Coin::query();
-        return DataTables::eloquent($coin)
+        $coins = Coin::query();
+        return DataTables::eloquent($coins)
+            ->addColumn('image_preview',function($coin){
+                return <<<HTML
+<img width="100px" src="$coin->image" />
+HTML;
+
+            })
+            ->escapeColumns([])
             ->toJson();
     }
 }

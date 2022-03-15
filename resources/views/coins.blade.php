@@ -30,6 +30,7 @@
                         <thead>
                         <tr>
                             <th>شناسه</th>
+                            <th>تصویر</th>
                             <th>نام</th>
                             <th>نشان</th>
                             <th>ارزش بازار</th>
@@ -56,6 +57,7 @@
             ajax: '{!! route('v1.get.coin') !!}',
             columns: [
                 { data: 'id', name: 'id' },
+                { data: 'image_preview', name: 'image_preview' },
                 { data: 'name', name: 'name' },
                 { data: 'symbol', name: 'symbol' },
                 { data: 'price.market_cap', name: 'price.market_cap' },
